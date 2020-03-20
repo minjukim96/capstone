@@ -1,0 +1,15 @@
+{% extends "base.html" %}     <!--base.html 파일을 상속받겠다-->
+{% block content %}
+{% if session['logged_in'] %}
+<p>Oh no Dont show page</p>
+{% else %}
+
+<h2>Register</h2>
+<form action="/register/" method="POST">
+  <p><input type="username" name="username" placeholder="Username"></p>
+  <p><input type="password" name="password" placeholder="Password"></p>
+  <!--<p><input type="email" name="email" placeholder="Email"></p>-->
+  <input type="submit" value="Sign up">
+</form>
+{% endif %}
+{% endblock %}
